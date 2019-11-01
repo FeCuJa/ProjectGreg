@@ -1,2 +1,0 @@
-# ProjectGreg
-Created with CodeSandbox
