@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="CodeSandbox from GitHub on Friday"/>
+    <HelloWorld msg="CodeSandbox from GitHub on Friday night"/>
   </div>
 </template>
 
