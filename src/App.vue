@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="CodeSandbox from GitHub on Friday night"/>
-  </div>
+  <main id="app">
+    <Calendar id="calendar"/>
+    <Drawer id="drawer"/>
+  </main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Calendar from "./components/Calendar";
+import Drawer from "./components/Drawer";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    Calendar,
+    Drawer
   }
 };
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+#calendar {
+  flex-basis: 75%;
+}
+#drawer {
+  flex-basis: 25%;
 }
 </style>
