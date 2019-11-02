@@ -18,7 +18,8 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="calendar">This is the calendar
+  <div class="calendar">
+    This is the calendar
     <CalendarMonth :month="selectedMonth"/>
   </div>
 </template>

@@ -34,6 +34,7 @@ export default Vue.extend({
 .day {
   border: 1px solid blue;
   margin: 1px;
+  height: 100%;
 }
 .day.outsideMonth {
   border-color: silver;

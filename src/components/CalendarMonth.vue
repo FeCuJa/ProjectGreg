@@ -33,7 +33,8 @@ export default Vue.extend({
   methods: {
     selectDay(day) {
       this.selectedDay = day;
-      this.$emit('selectDay', this.selectDay);
+      this.$emit("selectDay", this.selectDay);
+      console.log("Selected day:", day);
     }
   },
   components: {
@@ -45,16 +46,34 @@ export default Vue.extend({
 <template>
   <div class="calendar-month">
     <div class="month-name">{{ month.monthLong }}</div>
-    <ul class="day-list">
-      <li v-for="day of daysOfMonth" :key="day.toISODate()">
+    <ol class="day-list">
+      <li class="day-cell" v-for="day of daysOfMonth" :key="day.toISODate()">
         <DayCell :month="month" :day="day" :tasks="[]" @selectDay="selectDay"/>
       </li>
-    </ul>
+    </ol>
   </div>
 </template>
 
 <style scoped>
 .calendar-month {
   background: rgba(0, 0, 255, 0.25);
+  height: 100%;
+}
+
+.month-name {
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.day-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-content: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: calc(100% - 2rem);
+}
+.day-cell {
 }
 </style>

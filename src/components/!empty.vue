@@ -11,11 +11,10 @@ export default Vue.extend({
   }),
   computed: {
     someComputedData: () => this.someData.toUpper()
+    //someComputedData: function() { return this.someData.toUpper(); }
   },
   methods: {
-    someMethod(args) {
-
-    }
+    someMethod(args) {}
   },
   components: {}
 });
