@@ -7,7 +7,8 @@ export default Vue.extend({
   name: "Calendar",
   props: {},
   data: () => ({
-    selectedMonth: DateTime.local().startOf("month")
+    selectedMonth: DateTime.local().startOf("month"),
+    selectedDay: null
   }),
   computed: {},
   components: {

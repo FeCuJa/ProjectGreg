@@ -21,7 +21,11 @@ export default Vue.extend({
 </script>
 
 <template>
-  <div class="day" :class="{today: isToday, outsideMonth: !isInMonth}">
+  <div
+    class="day"
+    :class="{today: isToday, outsideMonth: !isInMonth}"
+    @click="$emit('selectDay', day)"
+  >
     <span>{{ day.day }}</span>
   </div>
 </template>

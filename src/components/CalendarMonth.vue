@@ -8,7 +8,9 @@ export default Vue.extend({
   props: {
     month: DateTime
   },
-  data: () => ({}),
+  data: () => ({
+    selectedDay: null
+  }),
   computed: {
     daysOfMonth() {
       const days = [];
@@ -22,11 +24,16 @@ export default Vue.extend({
       const calendarMonthStart = this.month.startOf("week");
       let i = calendarMonthStart.diff(this.month, "days").days - 1;
 
-      console.log(i);
       for (; i < dayCount; i++) {
         days.push(this.month.plus({ days: i }));
       }
       return days;
+    }
+  },
+  methods: {
+    selectDay(day) {
+      this.selectedDay = day;
+      this.$emit('selectDay', this.selectDay);
     }
   },
   components: {
@@ -40,7 +47,7 @@ export default Vue.extend({
     <div class="month-name">{{ month.monthLong }}</div>
     <ul class="day-list">
       <li v-for="day of daysOfMonth" :key="day.toISODate()">
-        <DayCell :month="month" :day="day" :tasks="[]"/>
+        <DayCell :month="month" :day="day" :tasks="[]" @selectDay="selectDay"/>
       </li>
     </ul>
   </div>

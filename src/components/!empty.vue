@@ -12,6 +12,11 @@ export default Vue.extend({
   computed: {
     someComputedData: () => this.someData.toUpper()
   },
+  methods: {
+    someMethod(args) {
+
+    }
+  },
   components: {}
 });
 </script>
